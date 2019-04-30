@@ -16,6 +16,7 @@ Let's build a [Phaser 3](https://phaser.io/phaser3) Game with [Typescript](https
 - Using Groups
 - Platforms
 - Collisions
+- Practice
 - Keeping score and drawing a life bar
 - Camera and world size
 - Finished workshop files
@@ -128,6 +129,12 @@ export class GameScene extends Phaser.Scene {
 }
 ```
 
+## Practice 
+
+Give each scene a different background image and text. To use your own images, load them in `boot-scene`! We will add code to switch between scenes:
+
+In the boot scene, use `this.scene.start('StartScene')` to go to the startscene when all images are loaded. In the `StartScene`, create a button or a generic click handler, which will take the player to the `GameScene`. Do the same for the `EndScene`. Check if we can switch between scenes now!
+
 ## Adding a sprite
 
 You can add a sprite in several ways, but in this workshop we will use `classes` to add new physics sprites. First we need a class in the `objects` folder. The sprite adds itself to the scene and the physics world in the constructor function. Because this is a physics sprite, we can also add velocity.
@@ -208,6 +215,10 @@ if(this.scene.input.keyboard.checkDown(this.cursors.space, 500)){
 }
 ```
 
+## Practice
+
+Add the player to the game, by uncommenting the `this.player` code in the `GameScene`. In the player code, uncomment the lines one by one to see the effect of physics on the world.
+
 ## Using groups
 
 Groups are a handy way to group sprites together. This way it's easier to check for collisions between the player and a whole group of sprites. Groups can automatically update themselves.
@@ -258,6 +269,24 @@ collectStar(player, star) {
 }
 ```
 
+## Practice
+
+We will add platforms to the platforms group. Create your own small level!
+
+## Practice
+
+Now you know how to create a basic scene, let's take some time to practice.
+
+- Create a new scene with a different layout of platforms
+- Add the scene to `app.ts`
+- If the player has collected all the stars in a scene, switch to the next scene!
+
+## Enemies
+
+We will add a bomb sprite to the game, and go to the gameover screen when the player hits the bomb. Feel free to experiment with adding more bombs and giving them random velocity. 
+
+From here on, you can continue with building your game levels, or implement a score and a camera, as explained below.
+
 ## Keeping score and drawing a life bar
 
 You can keep track of values between scenes by using the `registry`. This way, your end scene can know how much you scored in the game scene.
@@ -303,13 +332,11 @@ this.cameras.main.startFollow(this.player)
 
 ## Finished workshop files
 
-You can find the finished workshop files, with all the above code implemented, in the `src_finished` folder. 
+On the [github website](https://github.com/HR-CMGT/CLE4-phaser-workshop), click the `branch` dropdown and select `finished` to peek in the finished files. This way you can compare finished code with your own local files. You can also check out the `finished` branch in VS Code by clicking the `master` button in the bottom left corner, if you just want to work with the finished project directly.
 
 ## Where to go from here
 
 Check out the [workshop notes](notes.md) for some quick tips on using **spritesheets, particles, tweens** and more. Check out the [Official Phaser 3 Examples](http://labs.phaser.io) to learn everything about [Spritesheets](http://labs.phaser.io/view.html?src=src/animation\reverse%20animation.js), [Repeating tiles](http://labs.phaser.io/index.html?dir=game%20objects/tile%20sprite/&q=) and [Particles](http://labs.phaser.io/index.html?dir=game%20objects/particle%20emitter/&q=)
-
-
 
 # Phaser documentation
 
