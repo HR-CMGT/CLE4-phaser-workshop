@@ -2,6 +2,8 @@
 
 Let's build a [Phaser 3](https://phaser.io/phaser3) Game with [Typescript](https://www.typescriptlang.org) and [Parcel](https://parceljs.org) 🤯
 
+### [View the end result](https://hr-cmgt.github.io/CLE4-phaser-workshop/)
+
 ## Workshop Contents
 
 - Preparations
