@@ -129,11 +129,10 @@ export class GameScene extends Phaser.Scene {
 }
 ```
 
-## Practice 
-
-Give each scene a different background image and text. To use your own images, load them in `boot-scene`! We will add code to switch between scenes:
-
-In the boot scene, use `this.scene.start('StartScene')` to go to the startscene when all images are loaded. In the `StartScene`, create a button or a generic click handler, which will take the player to the `GameScene`. Do the same for the `EndScene`. Check if we can switch between scenes now!
+> ## Practice 
+> Give each scene a different background image and text. To use your own images, load them in `boot-scene`! We will add code to switch between scenes:
+> 
+> In the boot scene, use `this.scene.start('StartScene')` to go to the startscene when all images are loaded. In the `StartScene`, create a button or a generic click handler, which will take the player to the `GameScene`. Do the same for the `EndScene`. Check if we can switch between scenes now!
 
 ## Adding a sprite
 
@@ -215,9 +214,8 @@ if(this.scene.input.keyboard.checkDown(this.cursors.space, 500)){
 }
 ```
 
-## Practice
-
-Add the player to the game, by uncommenting the `this.player` code in the `GameScene`. In the player code, uncomment the lines one by one to see the effect of physics on the world.
+> ## Practice
+> Add the player to the game, by uncommenting the `this.player` code in the `GameScene`. In the player code, uncomment the lines one by one to see the effect of physics on the world.
 
 ## Using groups
 
@@ -269,17 +267,14 @@ collectStar(player, star) {
 }
 ```
 
-## Practice
+> ## Practice
+> We will add platforms to the platforms group. Create your own small level!
 
-We will add platforms to the platforms group. Create your own small level!
-
-## Practice
-
-Now you know how to create a basic scene, let's take some time to practice.
-
-- Create a new scene with a different layout of platforms
-- Add the scene to `app.ts`
-- If the player has collected all the stars in a scene, switch to the next scene!
+> ## Practice
+> Now you know how to create a basic scene, let's take some time to practice. 
+> - Create a new scene with a different layout of platforms
+> - Add the scene to `app.ts`
+> - If the player has collected all the stars in a scene, switch to the next scene!
 
 ## Enemies
 
@@ -334,15 +329,17 @@ this.cameras.main.startFollow(this.player)
 
 On the [github website](https://github.com/HR-CMGT/CLE4-phaser-workshop), click the `branch` dropdown and select `finished` to peek in the finished files. This way you can compare finished code with your own local files. You can also check out the `finished` branch in VS Code by clicking the `master` button in the bottom left corner, if you just want to work with the finished project directly.
 
-## Where to go from here
-
-Check out the [workshop notes](notes.md) for some quick tips on using **spritesheets, particles, tweens** and more. Check out the [Official Phaser 3 Examples](http://labs.phaser.io) to learn everything about [Spritesheets](http://labs.phaser.io/view.html?src=src/animation\reverse%20animation.js), [Repeating tiles](http://labs.phaser.io/index.html?dir=game%20objects/tile%20sprite/&q=) and [Particles](http://labs.phaser.io/index.html?dir=game%20objects/particle%20emitter/&q=)
+> ## Practice
+> Check out the [workshop notes](notes.md) and see if you can add
+> - Spritesheets for an animating character
+> - Particles just because they're cool
+> - Tweens for animating buttons
 
 # Phaser documentation
 
 Note that the official docs are in Javascript, which may need some small adjustments to work in a Typescript project.
 
-- [Phaser 3 Examples](http://labs.phaser.io) - A great source for exploring. Click **EDIT** to see the source code 🤩!
+- [Phaser 3 Examples](http://labs.phaser.io) - A great source for exploring. Click **EDIT** to see the source code 🤩,  for example: [Spritesheets](http://labs.phaser.io/view.html?src=src/animation\reverse%20animation.js), [Repeating tiles](http://labs.phaser.io/index.html?dir=game%20objects/tile%20sprite/&q=) and [Particles](http://labs.phaser.io/index.html?dir=game%20objects/particle%20emitter/&q=)
 - [Phaser 3 Documentation](https://photonstorm.github.io/phaser3-docs/index.html)
 - [Getting started with Phaser 3](https://phaser.io/tutorials/getting-started-phaser3)
 - [Phaser 3 Coding Tips](https://phaser.io/learn/community-tutorials)
