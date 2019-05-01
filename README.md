@@ -16,7 +16,6 @@ Let's build a [Phaser 3](https://phaser.io/phaser3) Game with [Typescript](https
 - Using Groups
 - Platforms
 - Collisions
-- Practice
 - Keeping score and drawing a life bar
 - Camera and world size
 - Finished workshop files
@@ -106,26 +105,21 @@ export class GameScene extends Phaser.Scene {
 
 You can detect pointer clicks on a whole scene:
 ```typescript
-this.input.once('pointerdown', (pointer) => {
-    this.scene.start('GameScene')
-})
+create() {
+    this.input.once('pointerdown', (pointer) => {
+        this.scene.start('GameScene')
+    })
+}
 ```
 
-By using `setInteractive()` on a gameobject you can add a click handler. This button will switch the game to another scene!
+By using `setInteractive()` on a gameobject you can create single buttons
 ```typescript
-export class GameScene extends Phaser.Scene {
-
-    constructor() {
-        super({key: "GameScene"})
-    }
-    
-    public create(): void {
-        let btn1 = this.add.image(100,500, 'mybutton')
-        btn1.setInteractive()
-        btn1.on('pointerdown', (pointer) => {
-            this.scene.start('GameScene')
-        })
-    }
+create() {
+    let btn1 = this.add.image(100,500, 'mybutton')
+    btn1.setInteractive()
+    btn1.on('pointerdown', (pointer) => {
+        this.scene.start('GameScene')
+    })
 }
 ```
 
