@@ -321,7 +321,7 @@ this.cameras.main.startFollow(this.player)
 
 ## Finished workshop files
 
-On the [github website](https://github.com/HR-CMGT/CLE4-phaser-workshop), click the `branch` dropdown and select `gh-pages` to peek in the finished files. This way you can compare the finished project with your own project. You can also click the `master` button in VS Code, to work in the finished project directly.
+On the [github website](https://github.com/HR-CMGT/CLE4-phaser-workshop), click the `branch` dropdown and select `finished` to peek in the finished source code. This way you can compare the finished project with your own project. You can also click the `master` button in VS Code, to work in the finished project directly.
 
 > ## Practice
 > Check out the [workshop notes](notes.md) and see if you can add
