@@ -1,5 +1,7 @@
 # Phaser 3 Workshop
 
+This is the branch for the finished workshop files.
+
 Let's build a [Phaser 3](https://phaser.io/phaser3) Game with [Typescript](https://www.typescriptlang.org) and [Parcel](https://parceljs.org) 🤯
 
 ## Workshop Contents
