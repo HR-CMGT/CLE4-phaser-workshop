@@ -344,6 +344,10 @@ Note that the official docs are in Javascript, which may need some small adjustm
 
 - [Forum](https://phaser.discourse.group)
 
+## Codecademy course
+
+- [Game development with PhaserJS](https://www.codecademy.com/learn/learn-phaser)
+
 ## Typescript example projects
 
 - [RuimteGruis by KokoDoko](https://github.com/KokoDoko/ruimtegruis) and [play it here](https://kokodoko.github.io/ruimtegruis/)
