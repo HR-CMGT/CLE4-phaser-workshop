@@ -9,7 +9,9 @@
     "start": "parcel serve src/index.html --open --out-dir docs",
     "clean": "rm -v docs/*"
   },
-  "keywords": ["phaser3"],
+  "keywords": [
+    "phaser3"
+  ],
   "author": "HR-CMGT",
   "license": "ISC",
   "dependencies": {

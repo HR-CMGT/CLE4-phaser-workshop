@@ -7,6 +7,7 @@ Let's build a [Phaser 3](https://phaser.io/phaser3) Game with [Typescript](https
 ## Workshop Contents
 
 - Preparations
+- Components of the game
 - Typescript Classes
 - Game settings
 - Scenes
@@ -39,6 +40,10 @@ npm run start
 ```
 Open `http://localhost:1234` to view the project!
 
+## Components of the game
+
+![components](./src/assets/readme_layout.png)
+
 ## Typescript Classes
 
 A generic Typescript class looks like this. You don't need `let` when declaring properties (`lives`). Methods (`showLives`) don't need the `function` keyword. The `create` and `update` methods are automatically called by Phaser. The `this` keyword is used to refer to properties (`lives`) and methods (`showLives`) of a class.
@@ -64,7 +69,6 @@ export class Player {
     }
 }
 ```
-
 ## Game Settings
 
 Look at `app.ts` to decide the main settings for your game. Points of interest are the physics engine and gravity value, the canvas size and the `pixelArt` rendering option.
