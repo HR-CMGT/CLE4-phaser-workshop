@@ -22,6 +22,7 @@ Let's build a [Phaser 3](https://phaser.io/phaser3) Game with [Typescript](https
 - Keeping score and drawing a life bar
 - Camera and world size
 - Finished workshop files
+- Publishing your game
 - Documentation
 - Using Parcel
 
@@ -334,6 +335,23 @@ On the [github website](https://github.com/HR-CMGT/CLE4-phaser-workshop), click 
 > - Spritesheets for an animating character
 > - Particles just because they're cool
 > - Tweens for animating buttons
+
+## Publishing your game
+
+When you are happy with your game, you can stop the development server and build the final files:
+
+```sh
+# stop the development server
+CTRL+C 
+
+# publish your project
+npm run build
+```
+Now, you can push your repository to github. Double-check that your `.gitignore` file mentions `node_modules`, because we don't want to push this folder to github!
+
+In GitHub settings you can choose to publish the master/DOCS folder, this makes your game playable online!
+
+![pages](./src/assets/readme_pages.png)
 
 # Phaser documentation
 
