@@ -120,6 +120,23 @@ export class Bullet extends Phaser.Physics.Arcade.Sprite {
 
 Particles [config](https://photonstorm.github.io/phaser3-docs/global.html#ParticleEmitterConfig) and [examples](http://labs.phaser.io/index.html?dir=game%20objects/particle%20emitter/)
 
+## Collision
+
+```typescript
+// enable collision between objects or groups to cause objects to bounce off each other in the physics simulation 
+this.physics.add.collider(this.ship, this.enemyGroup) 
+
+// you can add a callback to execute your own code after a collision happens
+this.physics.add.collider(this.ship, this.enemyGroup, callback, null, this) 
+
+// use overlap instead of collision if you just want to know if objects hit each other, without causing a physics response.
+this.physics.add.overlap(ship, enemy, callback, null, this)
+
+callback(ship, enemy){
+    console.log("ship hit an enemy!")
+}
+```
+
 ## Responding to collision
 
 ```typescript
@@ -138,24 +155,9 @@ onCollide(player, enemy) {
 
     // if you keep track of the enemy in your own array, remove it from there too
     this.enemies = this.enemies.filter(item => item !== enemy)
-```
-
-## Collision
-
-```typescript
-// enable collision between objects or groups to cause objects to bounce off each other in the physics simulation 
-this.physics.add.collider(this.ship, this.enemyGroup) 
-
-// you can add a callback to execute your own code after a collision happens
-this.physics.add.collider(this.ship, this.enemyGroup, callback, null, this) 
-
-// use overlap instead of collision if you just want to know if objects hit each other, without causing a physics response.
-this.physics.add.overlap(ship, enemy, callback, null, this)
-
-callback(ship, enemy){
-    console.log("ship hit an enemy!")
 }
 ```
+
 ## Collision without physics
 
 Without physics, you can still check if two objects overlap. You can check the bounding boxes with the intersects function:
@@ -253,7 +255,7 @@ this.bgtile.tilePositionX += 3
 
 ## Multiple scenes at once
 
-When the camera follows the player, we need the HUD to stay in the same place. We can create a separate HUD scene for this and add this on top of the active scene.
+When the camera follows the player, we need the UI to stay in the same place. We can create a separate UI scene for this and add this on top of the active scene. In this example you can see a UI added to the gamescene. Bear in mind that you need to remove the UI when you leave the scene. You have to add the scene to `app.ts`.
 
 ```typescript
 export class GameScene extends Phaser.Scene {
@@ -266,9 +268,26 @@ export class GameScene extends Phaser.Scene {
         this.scene.add("UIScene", new UIScene("UIScene"), true)
     }
 
-    hitBomb() {
+    gameOver() {
         this.scene.remove("UIScene")
         this.scene.start('EndScene')
+    }
+}
+
+export class UIScene extends Phaser.Scene {
+
+    private scoreField: Phaser.GameObjects.Text
+
+    constructor(key:string) {
+        super(key)
+    }
+
+    create() {
+        this.scoreField = this.add.text(660, 20, 'Score : 0', { fontFamily: 'Arial Black', fontSize: 18, color: '#FFF' })
+    }
+
+    update(){
+        this.scoreField.text = 'Score : ' + this.registry.values.score
     }
 }
 ```
