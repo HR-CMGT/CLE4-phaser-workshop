@@ -362,6 +362,12 @@ Note that the official docs are in Javascript, which may need some small adjustm
 - [Getting started with Phaser 3](https://phaser.io/tutorials/getting-started-phaser3)
 - [Phaser 3 Coding Tips](https://phaser.io/learn/community-tutorials)
 
+## Typescript examples
+
+- [Check these Typescript example projects for Mario, Tank Shooter, Snake, Flappy Bird and Asteroids](https://github.com/digitsensitive/phaser3-typescript/)
+- [RuimteGruis - Space Shooter game example](https://github.com/KokoDoko/ruimtegruis) and [play it here](https://kokodoko.github.io/ruimtegruis/)
+- [Tutorial: Build Flappy Bird with Phaser 3 and Typescript in 5 minutes](https://medium.com/@digit.sensitivee/learn-to-create-a-html5-game-in-5-minutes-604118f5d0ab)
+
 ## Forum
 
 - [Forum](https://phaser.discourse.group)
@@ -370,26 +376,18 @@ Note that the official docs are in Javascript, which may need some small adjustm
 
 - [Game development with PhaserJS](https://www.codecademy.com/learn/learn-phaser)
 
-## Typescript example projects
-
-- [RuimteGruis by KokoDoko](https://github.com/KokoDoko/ruimtegruis) and [play it here](https://kokodoko.github.io/ruimtegruis/)
-- [Phaser 3 Typescript OOP Setup and Example projects](https://github.com/digitsensitive/phaser3-typescript)
-- [Tutorial: Build Flappy Bird with Phaser 3 and Typescript](https://medium.com/@digit.sensitivee/learn-to-create-a-html5-game-in-5-minutes-604118f5d0ab)
-- [Check the Typescript example games](https://github.com/digitsensitive/phaser3-typescript/tree/master/src/games) to learn about specific game mechanics
-
 # Using Parcel
 
-Parcel will bundle your phaser modules that use `import` and `export`, and will convert Typescript to Javascript. Parcel will generate the `docs` folder for uploading to a web server 🧙.
-
-### Building for production
-
-This will create all the final files in the docs folder, ready for publishing online.
+Parcel will bundle your phaser modules that use `import` and `export`, and will convert Typescript to Javascript. Parcel will generate the `docs` folder for uploading to a web server 🧙. Parcel can start a live updating development server.
 
 ```sh
+# development server
+npm run start
+
+# build the final project
 npm run build
 ```
-
-If you use images or css in your project, you need to use `require`
+If you use images or css in your game, you need to use `require`
 
 ```javascript
 this.load.image('sky', require('../assets/background.jpg'))
