@@ -360,29 +360,31 @@ Note that the official docs are in Javascript, which may need some small adjustm
 
 - [Phaser 3 Examples](http://labs.phaser.io) - A great source for exploring. Click **EDIT** to see the source code 🤩,  for example: [Spritesheets](http://labs.phaser.io/view.html?src=src/animation\reverse%20animation.js), [Repeating tiles](http://labs.phaser.io/index.html?dir=game%20objects/tile%20sprite/&q=) and [Particles](http://labs.phaser.io/index.html?dir=game%20objects/particle%20emitter/&q=)
 - [Phaser 3 Documentation](https://photonstorm.github.io/phaser3-docs/index.html)
-- [Getting started with Phaser 3](https://phaser.io/tutorials/getting-started-phaser3)
-- [Phaser 3 Coding Tips](https://phaser.io/learn/community-tutorials)
+- [Phaser 3 Docs with Class examples](https://rexrainbow.github.io/phaser3-rex-notes/docs/site/)
 
 ## Typescript examples
 
+- [Workshop notes](notes.md)
 - [Check these Typescript example projects for Mario, Tank Shooter, Snake, Flappy Bird and Asteroids](https://github.com/digitsensitive/phaser3-typescript/)
 - [RuimteGruis - Space Shooter game example](https://github.com/KokoDoko/ruimtegruis) and [play it here](https://kokodoko.github.io/ruimtegruis/)
+
+## Tutorials 
+
+- [Getting started with Phaser 3](https://phaser.io/tutorials/getting-started-phaser3)
+- [Phaser 3 Coding Tips](https://phaser.io/learn/community-tutorials)
 - [Tutorial: Build Flappy Bird with Phaser 3 and Typescript in 5 minutes](https://medium.com/@digit.sensitivee/learn-to-create-a-html5-game-in-5-minutes-604118f5d0ab)
+- [Codecademy : Game Development with PhaserJS](https://www.codecademy.com/learn/learn-phaser)
 
 ## Forum
 
 - [Forum](https://phaser.discourse.group)
-
-## Codecademy course
-
-- [Game development with PhaserJS](https://www.codecademy.com/learn/learn-phaser)
 
 # Using Parcel
 
 Parcel will bundle your phaser modules that use `import` and `export`, and will convert Typescript to Javascript. Parcel will generate the `docs` folder for uploading to a web server 🧙. Parcel can start a live updating development server.
 
 ```sh
-# development server
+# development server with watch mode
 npm run start
 
 # build the final project

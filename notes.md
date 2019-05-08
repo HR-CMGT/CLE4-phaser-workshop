@@ -1,62 +1,104 @@
 # Workshop notes
 
-## Spritesheet animation
+## Sprite size and hitbox
 
-Load an image that has multiple frames, and specify the frame size
-```typescript
-preload() {
-    this.load.spritesheet('dude', require('assets/dude.png'), { frameWidth: 32, frameHeight: 48 })
+Enable debug in `app.ts` to show hitboxes.
+
+```
+arcade: {
+    debug: true
 }
 ```
+A sprite can scale and have a hitbox that is different from the sprite size. 
 
-Add the sprite to the scene, and then create *animation states*, specify a set of frames and a speed for each direction of movement.
 ```typescript
-create() {
-    player = this.physics.add.sprite(100, 450, 'dude');
-    this.anims.create({
-        key: 'left',
-        frames: this.anims.generateFrameNumbers('dude', { start: 0, end: 3 }),
-        frameRate: 10,
-        repeat: -1
-    });
+export class Bomb extends Phaser.Physics.Arcade.Sprite {
 
-    this.anims.create({
-        key: 'idle',
-        frames: [ { key: 'dude', frame: 4 } ],
-        frameRate: 20
-    });
+    constructor(scene, x,y) {
+        // show sprite twice as big as the image
+        this.setScale(2)
 
-    this.anims.create({
-        key: 'right',
-        frames: this.anims.generateFrameNumbers('dude', { start: 5, end: 8 }),
-        frameRate: 10,
-        repeat: -1
-    })
-}
-```
-
-Now, you can play the different animations when you want, for example when the cursor keys are pressed
-```typescript
-function update () {
-    if (cursors.left.isDown) {
-        player.setVelocityX(-160)
-        player.anims.play('left', true)
-    } else if (cursors.right.isDown) {
-        player.setVelocityX(160)
-        player.anims.play('right', true)
-    } else {
-        player.setVelocityX(0)
-        player.anims.play('idle')
+        // set the size and the offset of the hitbox in pixels
+        this.setSize(100,100)
+        this.setOffset(10,10)
     }
 }
 ```
 
+## Scrolling background
+
+A `tileSprite` gets repeated, when the size is larger than the loaded image. By updating the tile position, the image can scroll indefinitely. Note that tile sprites images need to be square and have a size of 8x8 pixels, or a power thereof (16x16, 32x32, etc.)
+```typescript
+create(){
+    this.bgtile = this.add.tileSprite(0, 0, 1800, 600, 'background')
+    this.bgtile.setOrigin(0,0)
+}
+update() {
+    this.bgtile.tilePositionX += 3
+}
+```
+
+## Spritesheet animation
+
+In the `boot-scene` we load an image that has multiple frames, and specify the frame size
+```typescript
+preload() {
+    this.load.spritesheet('jake', require('../assets/jake_animated.png'), { frameWidth: 37, frameHeight: 56 });
+}
+```
+
+Then, in `player.ts` we create animations by using the frames from the image:
+```typescript
+export class Player extends Phaser.Physics.Arcade.Sprite {
+
+    constructor(scene) {
+        super(scene, 100, 450, "bmo")
+
+        // an animation with 8 frames
+        this.scene.anims.create({
+            key: 'walk',
+            frames: this.scene.anims.generateFrameNumbers('jake', { start: 0, end: 7 }),
+            frameRate: 10,
+            repeat: -1
+        })
+        // idle and jump only use 1 frame
+        this.scene.anims.create({
+            key: 'idle',
+            frames: [{ key: 'jake', frame: 8 }],
+            frameRate: 20
+        })
+        this.scene.anims.create({
+            key: 'jump',
+            frames: [{ key: 'jake', frame: 9 }],
+            frameRate: 20
+        })
+    }
+}
+```
+Finally, we can play these animations whenever we want, in this case we trigger them when pressing the cursor keys:
+```typescript
+export class Player extends Phaser.Physics.Arcade.Sprite {
+
+    public update(): void {
+        // if the player has vertical velocity, show the falling animation
+        // else, show the walking animation when the cursor keys are pressed
+        // else, show the idle animation
+        if (this.body.velocity.y > 2 || this.body.velocity.y < -4) {
+            this.anims.play('jump', true)
+        } else if (this.cursors.left.isDown) {
+            this.anims.play('walk', true)
+        } else if (this.cursors.right.isDown) {
+            this.anims.play('walk', true)
+        } else {
+            this.anims.play('idle')
+        }
+    }
+}
+```
 ## Get game size
 
 ```typescript
-this.game.config.width + "," + this.game.config.height
-
-// this.sys.canvas.height uses pixelAspectRatio, so may be bigger than game height
+console.log(this.game.config.width + "," + this.game.config.height)
 ```
 
 ## Tweens
@@ -170,8 +212,25 @@ if (Phaser.Geom.Intersects.RectangleToRectangle(this.enemy.getBounds(), this.shi
 
 ## Notes on groups
 
-- Game Objects created by `Phaser.Physics.Arcade.StaticGroup.create()` will automatically be given static Arcade Physics bodies.
-- Game Objects created by `Phaser.Physics.Arcade.Group.create()` will automatically be given dynamic Arcade Physics bodies.
+Groups can be of different types:
+
+```typescript
+export class BootScene extends Phaser.Scene { 
+    // a regular group
+    private bombs: Phaser.GameObjects.Group
+    // physics group members have dynamic Arcade Physics bodies
+    private stars: Phaser.Physics.Arcade.Group
+    // static physics group members have static Arcade Physics bodies -> no gravity or velocity
+    private platforms: Phaser.Physics.Arcade.StaticGroup
+
+    create(){
+        this.bombs = this.add.group()
+        this.stars = this.physics.add.group()
+        this.platforms = this.physics.add.staticGroup()
+    }
+}
+```
+You can add sprites to groups using `add` or `create`. You can set properties for all group members using `setAll`
 
 ```typescript
 // adding a sprite to a group
@@ -194,9 +253,10 @@ this.platforms = this.add.physicsGroup()
 this.platforms.setAll('body.allowGravity', false)
 this.platforms.setAll('body.immovable', true)
 this.platforms.setAll('body.velocity.x', 100)
+```
+When your group members have lots of settings or code, you can create a class, and then add class instances to your groups. By setting runChildUpdate to true, the update function in your custom class will be called automatically.
 
-// adding multiple existing sprite classes to a group
-// this way you can have more complicated sprite code in the sprite class instead of in the scene class
+```typescript
 this.platforms = this.add.group({ runChildUpdate: true })
 this.platforms.addMultiple([
     new Platform(this, 800, 574, "ground"),
@@ -205,6 +265,10 @@ this.platforms.addMultiple([
     new Platform(this, 700, 260, "ice"),
     new MovingPlatform(this, 450, 410, "platform")
 ], true)
+
+// static group objects are added to the physics world, but have no gravity or velocity
+this.platforms = this.physics.add.staticGroup()
+this.platforms.create(600, 400, 'ground')
 ```
 
 ## Friction
@@ -240,17 +304,6 @@ this.cameras.main.setBounds(0, 0, 1920, 1440);
 // making the camera follow the player
 this.cameras.main.startFollow(this.hero);
 
-```
-
-## Scrolling background
-
-When using a tiled image, we can scroll it indefinitely.
-```typescript
-this.bgtile = this.add.tileSprite(0, 0, 800, 600, 'bg')
-this.bgtile.setOrigin(0,0)
-
-// scroll the background - place in the update function
-this.bgtile.tilePositionX += 3
 ```
 
 ## Multiple scenes at once
