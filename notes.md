@@ -265,10 +265,6 @@ this.platforms.addMultiple([
     new Platform(this, 700, 260, "ice"),
     new MovingPlatform(this, 450, 410, "platform")
 ], true)
-
-// static group objects are added to the physics world, but have no gravity or velocity
-this.platforms = this.physics.add.staticGroup()
-this.platforms.create(600, 400, 'ground')
 ```
 
 ## Friction
@@ -345,15 +341,12 @@ export class UIScene extends Phaser.Scene {
 }
 ```
 
-example of HUD scene on top of regular scene 
-https://labs.phaser.io/edit.html?src=src%5Cscenes%5Cui%20scene%20es6.js
-
-dev log about scenes
-https://phaser.io/phaser3/devlog/121
+ - [example of HUD scene on top of regular scene](https://labs.phaser.io/edit.html?src=src%5Cscenes%5Cui%20scene%20es6.js)
+- [dev log about scenes](https://phaser.io/phaser3/devlog/121)
 
 ## Events
 
-To transfer data between scenes, we can use Events and EventListeners. [Example](https://labs.phaser.io/edit.html?src=src%5Cscenes%5Cui%20scene%20es6.js)
+To transfer data between objects (different scenes, or parent and child objects), we can use [Events and EventListeners](https://labs.phaser.io/edit.html?src=src%5Cscenes%5Cui%20scene%20es6.js)
 
 ```typescript
 // game scene emits an event
@@ -380,8 +373,5 @@ You can load google fonts with some extra effort. See the [ruimtegruis boot scen
 
 ## Config file
 
-all settings
-https://photonstorm.github.io/phaser3-docs/Phaser.Core.Config.html
-
-arcade physics settings
-https://photonstorm.github.io/phaser3-docs/global.html#PhysicsConfig
+ - [all settings](https://photonstorm.github.io/phaser3-docs/Phaser.Core.Config.html)
+- [arcade physics settings](https://photonstorm.github.io/phaser3-docs/global.html#PhysicsConfig)
