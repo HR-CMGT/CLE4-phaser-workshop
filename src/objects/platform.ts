@@ -1,4 +1,4 @@
-export class Platform extends Phaser.Physics.Arcade.Sprite {
+export class Platform extends Phaser.Physics.Arcade.Image {
 
     private speed:number
 

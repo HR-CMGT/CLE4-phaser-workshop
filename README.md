@@ -1,12 +1,13 @@
 # Phaser 3 Workshop
 
-This is the branch for the finished workshop files.
-
 Let's build a [Phaser 3](https://phaser.io/phaser3) Game with [Typescript](https://www.typescriptlang.org) and [Parcel](https://parceljs.org) 🤯
+
+### [View the end result](https://hr-cmgt.github.io/CLE4-phaser-workshop/)
 
 ## Workshop Contents
 
 - Preparations
+- Components of the game
 - Typescript Classes
 - Game settings
 - Scenes
@@ -40,6 +41,10 @@ npm run start
 ```
 Open `http://localhost:1234` to view the project!
 
+## Components of the game
+
+![components](./src/assets/readme_layout.png)
+
 ## Typescript Classes
 
 A generic Typescript class looks like this. You don't need `let` when declaring properties (`lives`). Methods (`showLives`) don't need the `function` keyword. The `create` and `update` methods are automatically called by Phaser. The `this` keyword is used to refer to properties (`lives`) and methods (`showLives`) of a class.
@@ -65,7 +70,6 @@ export class Player {
     }
 }
 ```
-
 ## Game Settings
 
 Look at `app.ts` to decide the main settings for your game. Points of interest are the physics engine and gravity value, the canvas size and the `pixelArt` rendering option.
@@ -324,13 +328,14 @@ this.cameras.main.startFollow(this.player)
 
 ## Finished workshop files
 
-On the [github website](https://github.com/HR-CMGT/CLE4-phaser-workshop), click the `branch` dropdown and select `gh-pages` to peek in the finished files. This way you can compare the finished project with your own project. You can also click the `master` button in VS Code, to work in the finished project directly.
+Click the `branch` dropdown in this repository and select `finished` to view the finished files. 
 
 > ## Practice
 > Check out the [workshop notes](notes.md) and see if you can add
 > - Spritesheets for an animating character
 > - Particles just because they're cool
 > - Tweens for animating buttons
+> - Tiled images for repeating backgrounds
 
 ## Publishing your game
 
@@ -347,39 +352,45 @@ Now, you can push your repository to github. Double-check that your `.gitignore`
 
 In GitHub settings you can choose to publish the master/DOCS folder, this makes your game playable online!
 
+![pages](./src/assets/readme_pages.png)
+
 # Phaser documentation
 
 Note that the official docs are in Javascript, which may need some small adjustments to work in a Typescript project.
 
 - [Phaser 3 Examples](http://labs.phaser.io) - A great source for exploring. Click **EDIT** to see the source code 🤩,  for example: [Spritesheets](http://labs.phaser.io/view.html?src=src/animation\reverse%20animation.js), [Repeating tiles](http://labs.phaser.io/index.html?dir=game%20objects/tile%20sprite/&q=) and [Particles](http://labs.phaser.io/index.html?dir=game%20objects/particle%20emitter/&q=)
 - [Phaser 3 Documentation](https://photonstorm.github.io/phaser3-docs/index.html)
+- [Phaser 3 Docs with Class examples](https://rexrainbow.github.io/phaser3-rex-notes/docs/site/)
+
+## Typescript examples
+
+- [Workshop notes](notes.md)
+- [Check these Typescript example projects for Mario, Tank Shooter, Snake, Flappy Bird and Asteroids](https://github.com/digitsensitive/phaser3-typescript/)
+- [RuimteGruis - Space Shooter game example](https://github.com/KokoDoko/ruimtegruis) and [play it here](https://kokodoko.github.io/ruimtegruis/)
+
+## Tutorials 
+
 - [Getting started with Phaser 3](https://phaser.io/tutorials/getting-started-phaser3)
 - [Phaser 3 Coding Tips](https://phaser.io/learn/community-tutorials)
+- [Tutorial: Build Flappy Bird with Phaser 3 and Typescript in 5 minutes](https://medium.com/@digit.sensitivee/learn-to-create-a-html5-game-in-5-minutes-604118f5d0ab)
+- [Codecademy : Game Development with PhaserJS](https://www.codecademy.com/learn/learn-phaser)
 
 ## Forum
 
 - [Forum](https://phaser.discourse.group)
 
-## Typescript example projects
-
-- [RuimteGruis by KokoDoko](https://github.com/KokoDoko/ruimtegruis) and [play it here](https://kokodoko.github.io/ruimtegruis/)
-- [Phaser 3 Typescript OOP Setup and Example projects](https://github.com/digitsensitive/phaser3-typescript)
-- [Tutorial: Build Flappy Bird with Phaser 3 and Typescript](https://medium.com/@digit.sensitivee/learn-to-create-a-html5-game-in-5-minutes-604118f5d0ab)
-- [Check the Typescript example games](https://github.com/digitsensitive/phaser3-typescript/tree/master/src/games) to learn about specific game mechanics
-
 # Using Parcel
 
-Parcel will bundle your phaser modules that use `import` and `export`, and will convert Typescript to Javascript. Parcel will generate the `docs` folder for uploading to a web server 🧙.
-
-### Building for production
-
-This will create all the final files in the docs folder, ready for publishing online.
+Parcel will bundle your phaser modules that use `import` and `export`, and will convert Typescript to Javascript. Parcel will generate the `docs` folder for uploading to a web server 🧙. Parcel can start a live updating development server.
 
 ```sh
+# development server with watch mode
+npm run start
+
+# build the final project
 npm run build
 ```
-
-If you use images or css in your project, you need to use `require`
+If you use images or css in your game, you need to use `require`
 
 ```javascript
 this.load.image('sky', require('../assets/background.jpg'))

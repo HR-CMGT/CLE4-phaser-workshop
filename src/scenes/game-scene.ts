@@ -7,6 +7,7 @@ import { UIScene } from "./ui-scene";
 export class GameScene extends Phaser.Scene {
 
     private player : Player
+    private clouds : Phaser.GameObjects.TileSprite
     private platforms: Phaser.GameObjects.Group
     private bombs: Phaser.GameObjects.Group
     private stars: Phaser.Physics.Arcade.Group
@@ -27,7 +28,10 @@ export class GameScene extends Phaser.Scene {
     }
 
     create(): void {
-        this.add.image(0, 0, 'sky').setOrigin(0, 0)
+        this.add.image(0, 0, 'bg').setOrigin(0, 0)
+
+        // drifting clouds
+        this.clouds = this.add.tileSprite(0, 0, 1600, 304, 'sky').setOrigin(0,0)
         
         this.platforms = this.add.group({ runChildUpdate: true })
         this.platforms.addMultiple([
@@ -37,8 +41,9 @@ export class GameScene extends Phaser.Scene {
             new Platform(this, 700, 260, "ice"),
             new MovingPlatform(this, 450, 410, "platform")
         ], true)
+        
     
-        // stars group heeft alleen plaatjes. physics group zorgt dat ze vallen...?
+        // stars group heeft alleen plaatjes. physics group zorgt dat ze vallen
         this.stars = this.physics.add.group({
             key: 'star',
             repeat: 11,
@@ -79,6 +84,7 @@ export class GameScene extends Phaser.Scene {
     }
 
     update(){
+        this.clouds.tilePositionX ++
         this.player.update()
     }
 
