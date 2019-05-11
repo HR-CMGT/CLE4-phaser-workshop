@@ -1,5 +1,9 @@
 # Workshop notes
 
+## Connecting a gamepad
+
+You can connect a PS4 or XBox gamepad via USB and [read the controller input](https://github.com/HR-CMGT/arcade-game)
+
 ## Sprite size and hitbox
 
 Enable debug in `app.ts` to show hitboxes.
