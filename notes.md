@@ -1,5 +1,20 @@
 # Workshop notes
 
+- Gamepad
+- Hitbox
+- Scrolling background
+- Spritesheet animation
+- Tweens
+- Particles
+- Collision without physics
+- Groups
+- Friction
+- Camera
+- UI Scene
+- Events
+- Scaling the game
+- Google Fonts
+
 ## Connecting a gamepad
 
 You can connect a PS4 or XBox gamepad via USB and [read the controller input](https://github.com/HR-CMGT/arcade-game)
@@ -370,6 +385,10 @@ class UIScene extends Phaser.Scene {
     }
 }
 ```
+
+## Scaling your game
+
+To adjust the game to the window size you can use the [Scale Settings](https://phaser.io/phaser3/devlog/136).
 
 ## Google fonts
 
