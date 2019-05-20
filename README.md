@@ -354,6 +354,25 @@ In GitHub settings you can choose to publish the master/DOCS folder, this makes 
 
 ![pages](./src/assets/readme_pages.png)
 
+## Adding functionality
+
+In the [Workshop notes](notes.md) you can read more about:
+
+- Gamepad
+- Hitbox
+- Scrolling background
+- Spritesheet animation
+- Tweens
+- Particles
+- Collision without physics
+- Groups
+- Friction
+- Camera
+- UI Scene
+- Events
+- Scale
+- Google Fonts
+
 # Phaser documentation
 
 Note that the official docs are in Javascript, which may need some small adjustments to work in a Typescript project.
@@ -364,7 +383,6 @@ Note that the official docs are in Javascript, which may need some small adjustm
 
 ## Typescript examples
 
-- [Workshop notes](notes.md)
 - [Check these Typescript example projects for Mario, Tank Shooter, Snake, Flappy Bird and Asteroids](https://github.com/digitsensitive/phaser3-typescript/)
 - [RuimteGruis - Space Shooter game example](https://github.com/KokoDoko/ruimtegruis) and [play it here](https://kokodoko.github.io/ruimtegruis/)
 
