@@ -17,7 +17,33 @@
 
 ## Connecting a gamepad
 
-You can connect a PS4 or XBox gamepad via USB and [read the controller input](https://github.com/HR-CMGT/arcade-game)
+Phaser has a built-in gamepad API to read an arcade stick or a PS4 / XBox gamepad. [View a complete example for a twin-stick shooter here](http://labs.phaser.io/edit.html?src=src/input\gamepad\twin%20stick%20shooter.js)
+
+CONFIG
+```
+var config = {
+    input: {
+        gamepad: true
+    }
+}
+```
+GAME
+```
+class Ship {
+   create() {
+      this.input.gamepad.on('down', function (pad, button, index) {
+         console.log("gamepad connected!")
+      }
+    }
+
+    update() {
+       console.log(gamepad.leftStick.x)       // x axis of joystick
+       console.log(gamepad.A)                 // button A
+    }
+}
+```
+
+You can also use the separate [Joystick class](https://github.com/HR-CMGT/arcade-game)
 
 ## Sprite size and hitbox
 
