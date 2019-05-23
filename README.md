@@ -365,6 +365,7 @@ In the [Workshop notes](notes.md) you can read more about:
 
 - Gamepad
 - Hitbox
+- Save hiscore
 - Scrolling background
 - Spritesheet animation
 - Tweens
