@@ -2,6 +2,7 @@
 
 - Gamepad
 - Hitbox
+- Hiscore
 - Scrolling background
 - Spritesheet animation
 - Tweens
@@ -67,6 +68,19 @@ export class Bomb extends Phaser.Physics.Arcade.Sprite {
         this.setSize(100,100)
         this.setOffset(10,10)
     }
+}
+```
+
+## Hiscore
+
+You can use localStorage to store scores. In this example the highest score is saved:
+```
+// get previously stored score
+let hiscore = Number(localStorage.getItem('hiscore'))
+
+// store the new hiscore
+if (score > hiscore) {
+     localStorage.setItem('hiscore', String(score))
 }
 ```
 
