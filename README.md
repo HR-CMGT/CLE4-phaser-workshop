@@ -23,6 +23,7 @@ Let's build a [Phaser 3](https://phaser.io/phaser3) Game with [Typescript](https
 - Camera and world size
 - Finished workshop files
 - Publishing your game
+- Adding your game to the arcade cabinet
 - Documentation
 - Using Parcel
 
@@ -353,6 +354,10 @@ Now, you can push your repository to github. Double-check that your `.gitignore`
 In GitHub settings you can choose to publish the master/DOCS folder, this makes your game playable online!
 
 ![pages](./src/assets/readme_pages.png)
+
+## Adding your game to the arcade cabinet
+
+- [Instructions for adding your game to the arcade cabinet](https://github.com/HR-CMGT/arcade-game)
 
 ## Adding functionality
 
