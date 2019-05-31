@@ -75,7 +75,7 @@ export class Bomb extends Phaser.Physics.Arcade.Sprite {
 ## Hiscore
 
 You can use localStorage to store scores. In this example the highest score is saved:
-```
+```typescript
 // get previously stored score
 let hiscore = Number(localStorage.getItem('hiscore'))
 
@@ -89,7 +89,7 @@ if (score > hiscore) {
 
 When you need something to happen every X seconds, or just once after X seconds, you can use the [Phaser Timer](https://rexrainbow.github.io/phaser3-rex-notes/docs/site/timer/)
 
-```
+```typescript
 create(){
     // call a function after 2 seconds
     let timer = this.scene.time.delayedCall(2000, this.doSomething, null, this);
