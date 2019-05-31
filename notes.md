@@ -3,6 +3,7 @@
 - Gamepad
 - Hitbox
 - Hiscore
+- Timer
 - Scrolling background
 - Spritesheet animation
 - Tweens
@@ -81,6 +82,29 @@ let hiscore = Number(localStorage.getItem('hiscore'))
 // store the new hiscore
 if (score > hiscore) {
      localStorage.setItem('hiscore', String(score))
+}
+```
+
+## Timer
+
+When you need something to happen every X seconds, or just once after X seconds, you can use the [Phaser Timer](https://rexrainbow.github.io/phaser3-rex-notes/docs/site/timer/)
+
+```
+create(){
+    // call a function after 2 seconds
+    let timer = this.scene.time.delayedCall(2000, this.doSomething, null, this);
+    
+    // repeat a function every 3 seconds
+    let anotherTimer = this.scene.time.addEvent({
+        delay: 3000, 
+        callback: this.doSomething,
+        //args: [],
+        callbackScope: this,
+        loop: true
+    })
+}
+doSomething(){
+    console.log("The timer called this function!")
 }
 ```
 
