@@ -5,6 +5,7 @@
 - Hiscore
 - Timer
 - Scrolling background
+- Animating separate images
 - Spritesheet animation
 - Tweens
 - Particles
@@ -121,9 +122,39 @@ update() {
 }
 ```
 
+## Animating separate images
+
+You can load separate images and play them sequentially. [example](http://labs.phaser.io/view.html?src=src/animation\animation%20from%20png%20sequence.js)
+
+```typescript
+preload(){
+    this.load.image('cat1', 'cat1.png')
+    this.load.image('cat2', 'cat2.png')
+    this.load.image('cat3', 'cat3.png')
+    this.load.image('cat4', 'cat4.png')
+}
+
+create () {
+    this.anims.create({
+        key: 'snooze',
+        frames: [
+            { key: 'cat1' },
+            { key: 'cat2' },
+            { key: 'cat3' },
+            { key: 'cat4' }
+        ],
+        frameRate: 8,
+        repeat: -1
+    });
+
+    this.add.sprite(400, 300, 'cat1')
+    this.play('snooze', true)
+}
+```
+
 ## Spritesheet animation
 
-In the `boot-scene` we load an image that has multiple frames, and specify the frame size
+In the `boot-scene` we load a single image that contains all animation frames, and specify the frame size
 ```typescript
 preload() {
     this.load.spritesheet('jake', require('../assets/jake_animated.png'), { frameWidth: 37, frameHeight: 56 });
