@@ -4,7 +4,7 @@ Let's build a [Phaser 3](https://phaser.io/phaser3) Game with [Typescript](https
 
 ### [View the end result](https://hr-cmgt.github.io/CLE4-phaser-workshop/)
 
-## Workshop Contents
+## Workshop 
 
 - Preparations
 - Components of the game
@@ -26,6 +26,26 @@ Let's build a [Phaser 3](https://phaser.io/phaser3) Game with [Typescript](https
 - Adding your game to the arcade cabinet
 - Documentation
 - Using Parcel
+
+## Workshop notes
+
+[View the workshop notes](./notes.md)
+
+- Gamepad
+- Hitbox
+- Save hiscore
+- Scrolling background
+- Spritesheet animation
+- Tweens
+- Particles
+- Collision without physics
+- Groups
+- Friction
+- Camera
+- UI Scene
+- Events
+- Game Scale
+- Google Fonts
 
 ## Preparing
 
@@ -361,23 +381,7 @@ In GitHub settings you can choose to publish the master/DOCS folder, this makes 
 
 ## Adding functionality
 
-In the [Workshop notes](notes.md) you can read more about:
-
-- Gamepad
-- Hitbox
-- Save hiscore
-- Scrolling background
-- Spritesheet animation
-- Tweens
-- Particles
-- Collision without physics
-- Groups
-- Friction
-- Camera
-- UI Scene
-- Events
-- Scale
-- Google Fonts
+You can continue with the [Workshop notes](notes.md) to add more basic functionality!
 
 # Phaser documentation
 
