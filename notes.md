@@ -147,8 +147,8 @@ create () {
         repeat: -1
     });
 
-    this.add.sprite(400, 300, 'cat1')
-    this.play('snooze', true)
+    let sprite = this.add.sprite(400, 300, 'cat1')
+    sprite.play('snooze', true)
 }
 ```
 
