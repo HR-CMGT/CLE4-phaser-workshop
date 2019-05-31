@@ -13,7 +13,7 @@
 - Camera
 - UI Scene
 - Events
-- Scaling the game
+- Game Scale
 - Google Fonts
 
 ## Connecting a gamepad
@@ -426,9 +426,23 @@ class UIScene extends Phaser.Scene {
 }
 ```
 
-## Scaling your game
+## Game Scale
 
-To adjust the game to the window size you can use the [Scale Settings](https://phaser.io/phaser3/devlog/136).
+If you update phaser to 3.17 (`npm install phaser@3.17.0`) you can use the [new scaling options](https://phaser.io/phaser3/devlog/136) in your config file. [Ruimtegruis example code](https://github.com/KokoDoko/ruimtegruis/blob/master/src/game.ts)
+
+GAME.TS
+```typescript
+const config: Phaser.Types.Core.GameConfig = {
+    scale: {
+        mode: Phaser.Scale.ScaleModes.FIT,
+        autoCenter: Phaser.Scale.Center.CENTER_BOTH
+    },
+    // @ts-ignore Issue with Typescript definitions in Phaser 3.17.0
+    scene: [BootScene, StartScene, GameScene, GameOver],
+    ...etc
+}
+```
+⚠️ Don't forget the `@ts-ignore` line in the example above. After installing Phaser 3.17 you can delete the `phaser.d.ts` file in the `src` folder! 
 
 ## Google fonts
 
