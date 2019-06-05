@@ -1,5 +1,6 @@
 # Workshop notes
 
+- Updating to Phaser 3.17
 - Gamepad
 - Hitbox
 - Hiscore
@@ -17,6 +18,13 @@
 - Events
 - Game Scale
 - Google Fonts
+
+## Updating to Phaser 3.17
+
+```
+npm install phaser@3.17.0
+```
+Verwijder de `phaser.d.ts` file uit het project. Dit staat nu in `node_modules`. Herstart VS Code. Mochten de types nog niet gevonden worden, dubbel check dan je `tsconfig.json` file.
 
 ## Connecting a gamepad
 
