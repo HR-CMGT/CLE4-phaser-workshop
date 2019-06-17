@@ -17,6 +17,7 @@
 - UI Scene
 - Events
 - Game Scale
+- Set gravity for a single object
 - Google Fonts
 
 ## Updating to Phaser 3.17
@@ -506,6 +507,24 @@ const config: Phaser.Types.Core.GameConfig = {
 }
 ```
 ⚠️ Don't forget the `@ts-ignore` line in the example above. After installing Phaser 3.17 you can delete the `phaser.d.ts` file in the `src` folder! 
+
+## Set gravity for a single object
+
+When creating a physics sprite, you can set the gravity of the physics body individually. For example, bullets have no gravity but the player does have gravity.
+
+Due to a glitch in the Typescript definition, you need an extra line of code before you can adjust physics:
+
+```
+export class Demo extends Phaser.Physics.Arcade.Sprite {
+    demo(){
+        // we need to tell typescript that the body has physics:
+        let body = this.body as Phaser.Physics.Arcade.Body
+        
+        // now you can adjust physics settings
+        body.setAllowGravity(false)
+     }
+}
+```
 
 ## Google fonts
 
