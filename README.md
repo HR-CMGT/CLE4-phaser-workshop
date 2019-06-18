@@ -411,8 +411,8 @@ Note that the official docs are in Javascript, which may need some small adjustm
 
 - [Open Game Art](https://opengameart.org)
 - [Kenney Game Assets](https://kenney.nl)
-- [Magica Voxel - 3d pixel art builder](https://ephtracy.github.io)
-- [Physics Editor - create complex collision shapes](https://www.codeandweb.com/physicseditor/tutorials/how-to-create-physics-shapes-for-phaser-3-and-matterjs) en [Tutorial](https://www.youtube.com/watch?v=d_WymsNdRBA)
+- [Magica Voxel - 3d pixel art builder](https://ephtracy.github.io), [Getting Started](https://www.youtube.com/watch?v=d_WymsNdRBA) and [Animation](https://www.youtube.com/watch?v=ss74Vm3YQdM)
+- [Physics Editor - create complex collision shapes](https://www.codeandweb.com/physicseditor/tutorials/how-to-create-physics-shapes-for-phaser-3-and-matterjs)
 
 # Using Parcel
 
