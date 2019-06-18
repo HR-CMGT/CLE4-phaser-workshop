@@ -407,6 +407,13 @@ Note that the official docs are in Javascript, which may need some small adjustm
 
 - [Forum](https://phaser.discourse.group)
 
+## Game design tools
+
+- [Open Game Art](https://opengameart.org)
+- [Kenney Game Assets](https://kenney.nl)
+- [Magica Voxel - 3d pixel art builder](https://ephtracy.github.io)
+- [Physics Editor - create complex collision shapes](https://www.codeandweb.com/physicseditor/tutorials/how-to-create-physics-shapes-for-phaser-3-and-matterjs)
+
 # Using Parcel
 
 Parcel will bundle your phaser modules that use `import` and `export`, and will convert Typescript to Javascript. Parcel will generate the `docs` folder for uploading to a web server 🧙. Parcel can start a live updating development server.
