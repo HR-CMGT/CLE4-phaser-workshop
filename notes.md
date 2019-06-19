@@ -54,8 +54,7 @@ class Ship {
     }
 }
 ```
-
-You can also use the separate [Joystick class](https://github.com/HR-CMGT/arcade-game)
+Check the [Joystick class](https://github.com/HR-CMGT/arcade-game) for instructions for the arcade cabinet.
 
 ## Sprite size and hitbox
 
