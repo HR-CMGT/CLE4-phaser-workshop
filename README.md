@@ -402,6 +402,7 @@ Note that the official docs are in Javascript, which may need some small adjustm
 - [Phaser 3 Coding Tips](https://phaser.io/learn/community-tutorials)
 - [Tutorial: Build Flappy Bird with Phaser 3 and Typescript in 5 minutes](https://medium.com/@digit.sensitivee/learn-to-create-a-html5-game-in-5-minutes-604118f5d0ab)
 - [Codecademy : Game Development with PhaserJS](https://www.codecademy.com/learn/learn-phaser)
+- [Making an infinite jumper game with Phaser](https://ourcade.co/books/infinite-jumper-phaser3/)
 
 ## Forum
 
@@ -409,6 +410,7 @@ Note that the official docs are in Javascript, which may need some small adjustm
 
 ## Game design tools
 
+- [Phaser Editor](https://phasereditor2d.com)
 - [Open Game Art](https://opengameart.org)
 - [Kenney Game Assets](https://kenney.nl)
 - [Magica Voxel - 3d pixel art builder](https://ephtracy.github.io), [Getting Started](https://www.youtube.com/watch?v=d_WymsNdRBA) and [Animation](https://www.youtube.com/watch?v=ss74Vm3YQdM)
